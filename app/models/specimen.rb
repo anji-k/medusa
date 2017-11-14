@@ -108,7 +108,8 @@ class Specimen < ActiveRecord::Base
         boxes.concat(specimen.box.ancestors) if specimen.box
       end
       if specimen.place
-        places << specimen.place
+        place = specimen.place
+        places << place
         attachment_files.concat(place.attachment_files)
       end
     end
